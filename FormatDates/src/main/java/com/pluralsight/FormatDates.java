@@ -11,38 +11,38 @@ public class FormatDates {
         euSystem(now);
         System.out.println(americanSystemMonth(now));
         daySystem();
-        clockSystem(now); // Pass 'now' instead of parsing invalid string
+        clockSystem(now);
         detailSystem(now);
     }
     //shows American calendar system pattern    static void americanSystem
     static void americanSystem(LocalDateTime now) {
-        DateTimeFormatter format1 = DateTimeFormatter.ofPattern("MM-dd-yyyy");
-        System.out.println(now.format(format1));
+        DateTimeFormatter americanSystem1 = DateTimeFormatter.ofPattern("MM-dd-yyyy");
+        System.out.println(now.format(americanSystem1));
     }
 //shows European calendar system pattern
     static void euSystem(LocalDateTime now) {
-        DateTimeFormatter format2 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
-        System.out.println(now.format(format2));
+        DateTimeFormatter euSystem1 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+        System.out.println(now.format(euSystem1));
     }
     //shows American calendar system pattern while spelling out the month
     static String americanSystemMonth(LocalDateTime now) {
-        DateTimeFormatter format3 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
-        return format3.format(now);
+        DateTimeFormatter americanSystem2 = DateTimeFormatter.ofPattern("MMMM dd, yyyy");
+        return americanSystem2.format(now);
     }
     //shows American calendar system pattern with emphasis on day of the week
     static void daySystem() {
-        DateTimeFormatter format4 = DateTimeFormatter.ofPattern("EEEE, MMM d, yyyy");
+        DateTimeFormatter daySystem1 = DateTimeFormatter.ofPattern("EEEE, MMM d, yyyy");
         LocalDateTime now = LocalDateTime.now();
-        System.out.println(now.format(format4));
+        System.out.println(now.format(daySystem1));
     }
     // displays local time zone
     static void clockSystem(LocalDateTime now) {
-        DateTimeFormatter format5 = DateTimeFormatter.ofPattern("HH:mm");
-        System.out.println(now.format(format5) + " -- display in GMT time");
+        DateTimeFormatter clockSystem1 = DateTimeFormatter.ofPattern("HH:mm");
+        System.out.println(now.format(clockSystem1) + " -- display in GMT time");
     }
-    // displays local time zone detailed
+    // displays local time and date Military zone detailed
     static void detailSystem(LocalDateTime now) {
-        DateTimeFormatter format6 = DateTimeFormatter.ofPattern("H:mm 'on' dd MMM yyyy");
-        System.out.println(now.format(format6) + " -- display in your local time zone");
+        DateTimeFormatter detailSystem1 = DateTimeFormatter.ofPattern("H:mm 'on' dd MMM yyyy");
+        System.out.println(now.format(detailSystem1) + " \n ---display in your local time zone---");
     }
 }
